@@ -9,16 +9,14 @@ const inventorySchema = new Schema(
       required: true
     },
     stockedQuantity: {
-      type: Number,
-      required: true
+      type: Number
     },
     price: {
       type: Number,
       required: true
     },
     availableQuantity: {
-      type: Number,
-      required: true
+      type: Number
     },
     modelNo: {
       type: String,
