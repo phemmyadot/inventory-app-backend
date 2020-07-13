@@ -48,17 +48,17 @@ exports.fetchInventoryById = (req, res, next) => {
 };
 
 
-exports.searchInventory = (req, res, next) => {
-  const inventoryName = req.query.name;
-  Inventory.find({ "name": { "$regex": inventoryName, "$options": "i" } })
-    .then(inventory => {
-      console.log(inventory)
-      if (inventory.length === 0) {
-        const error = new Error('Could not find inventory!');
+exports.searchInventories = (req, res, next) => {
+  const query = req.query.name;
+  Inventory.find({ "name": { "$regex": query, "$options": "i" } })
+    .then(inventories => {
+      console.log(inventories)
+      if (inventories.length === 0) {
+        const error = new Error('Could not find inventories!');
         error.statusCode = 404;
         throw error;
       }
-      res.status(200).json({ message: `${inventory.length} ${inventory.length > 0 ? 'inventories' : 'inventory'} found!`, inventory });
+      res.status(200).json({ message: `${inventories.length} ${inventories.length > 0 ? 'inventories' : 'inventory'} found!`, inventories });
     })
     .catch(err => {
       if (!err.statusCode) {

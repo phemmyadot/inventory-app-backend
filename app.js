@@ -29,7 +29,7 @@ app.route('/inventories')
     });
 
 app.get('/inventories/search', (req, res, next) => {
-    Controller.searchInventory(req, res, next);
+    Controller.searchInventories(req, res, next);
 });
 
 app.route('/inventories/:id')
