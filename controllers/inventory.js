@@ -117,7 +117,7 @@ exports.updateInventory = (req, res, next) => {
   }
 
   const name = req.body.name;
-  const stockedQuantity = req.body.availableQuantity;
+  // const stockedQuantity = req.body.availableQuantity;
   const availableQuantity = req.body.availableQuantity;
   const price = req.body.price;
   const model = req.body.model;
@@ -130,7 +130,7 @@ exports.updateInventory = (req, res, next) => {
         throw error;
       }
       inventory.name = name;
-      inventory.stockedQuantity = stockedQuantity;
+      inventory.stockedQuantity = inventory.stockedQuantity;
       inventory.availableQuantity = availableQuantity;
       inventory.price = price;
       inventory.modelNo = model;
