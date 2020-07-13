@@ -79,7 +79,7 @@ exports.createInventory = (req, res, next) => {
 
   const name = req.body.name;
   const stockedQuantity = req.body.stockedQuantity;
-  const availableQuantity = req.body.availableQuantity;
+  const availableQuantity = req.body.stockedQuantity;
   const price = req.body.price;
   const modelNo = req.body.model;
 
@@ -117,7 +117,7 @@ exports.updateInventory = (req, res, next) => {
   }
 
   const name = req.body.name;
-  const stockedQuantity = req.body.stockedQuantity;
+  const stockedQuantity = req.body.availableQuantity;
   const availableQuantity = req.body.availableQuantity;
   const price = req.body.price;
   const model = req.body.model;
