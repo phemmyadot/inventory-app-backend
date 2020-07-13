@@ -28,6 +28,10 @@ app.route('/inventories')
         Controller.createInventory(req, res, next);
     });
 
+app.get('/inventories/search', (req, res, next) => {
+    Controller.searchInventory(req, res, next);
+});
+
 app.route('/inventories/:id')
 .put((req, res, next) => {
     Controller.updateInventory(req, res, next);
